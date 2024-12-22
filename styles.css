@@ -37,6 +37,12 @@ html {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 5px;
+    transition: 0.3s;
+  }
+
+  .button:hover {
+    background-color: white;
+    color: #1f1f1f;
   }
   
   .buttonimg {

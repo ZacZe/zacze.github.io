@@ -2,12 +2,19 @@ html {
     height: 100%;
     width: 100%;
   }
+
+.montserrat_standard {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
   
-  h1 {
+h1 {
     color:#FAFAFA; 
     font-style:normal;
     font-size: 50px;
-    font-family: audiowide,"Arial";
+    font-family: montserrat_standard,"Arial";
     text-decoration: none;
   }
   

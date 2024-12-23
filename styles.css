@@ -34,7 +34,7 @@ h3 {
   
 .button {
   border: none;
-  color: white;
+  color: #bebec5;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -49,6 +49,7 @@ h3 {
 
 .button:hover {
   background-color: #3B3B3E;
+  color: white;
 }
 
 .buttonimg {

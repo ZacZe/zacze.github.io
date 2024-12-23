@@ -1,25 +1,18 @@
 :root {
-  --primary-colour: #18181B;   /* Dark grey for BG */
-  --secondary-colour: #bebec5; /* Light grey for FG */
+  --primary-colour: #2E2C2F;   /* Dark grey for BG */
+  --secondary-colour: #F7EBEC; /* Light grey for FG */
 }
 
 html {
   height: 100%;
   width: 100%;
 }
-
-.montserrat_standard {
-  font-family: "Montserrat", serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
   
 h1 {
   color:#FAFAFA; 
   font-style:normal;
   font-size: 50px;
-  font-family: "Montserrat","Arial";
+  font-family: "Oswald","Arial";
   text-decoration: none;
   }
   
@@ -27,7 +20,7 @@ h2 {
   color:#FAFAFA; 
   font-style: normal;
   font-size: 25px;
-  font-family:'Courier New', Courier, monospace;
+  font-family: "Montserrat","Arial";
   text-decoration: none;
 }
   
@@ -73,7 +66,6 @@ h3 {
 }
 
 .buttonimg {
-  background-color: #2a2a2a;
   border: none;
   padding: 10px;
   margin-top: 4px;

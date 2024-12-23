@@ -31,6 +31,14 @@ h3 {
   font-family: "Bebas Neue", sans-serif;
   text-decoration: none;
 }
+
+.main-section {
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
   
 .button {
   border: none;

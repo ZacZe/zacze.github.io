@@ -9,7 +9,7 @@ html {
 }
   
 h1 {
-  color:#FAFAFA; 
+  color: var(--secondary-colour);
   font-style:normal;
   font-size: 50px;
   font-family: "Oswald","Arial";
@@ -17,17 +17,18 @@ h1 {
   }
   
 h2 {
-  color:#FAFAFA; 
+  color: var(--secondary-colour);
   font-style: normal;
-  font-size: 25px;
+  font-size: 30px;
   font-family: "Montserrat","Arial";
   text-decoration: none;
 }
   
 h3 {
+  color: var(--secondary-colour);
   font-style:normal;
-  font-size: 40px;
-  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  font-family: "Montserrat","Arial";
   text-decoration: none;
 }
 
@@ -62,7 +63,7 @@ h3 {
 
 .button:hover {
   background-color: #3B3B3E;
-  color: white;
+  color: var(--secondary-colour);
 }
 
 .buttonimg {

@@ -1,10 +1,16 @@
-.dark-mode {
+:root {                          /* DEFAULT */
   --primary-colour: #2E2C2F;   /* Dark grey for BG */
   --secondary-colour: #F7EBEC; /* Light grey for FG */
   --text-colour: #d4c8c9;      /* Text colour */
 }
 
-.light-mode {
+.dark-mode {                     /* DARK MODE */
+  --primary-colour: #2E2C2F;   /* Dark grey for BG */
+  --secondary-colour: #F7EBEC; /* Light grey for FG */
+  --text-colour: #d4c8c9;      /* Text colour */
+}
+
+.light-mode {                    /* LIGHT MODE */
   --primary-colour: #F7EBEC;   /* Light grey for BG */
   --secondary-colour: #2E2C2F; /* Dark grey for FG */
   --text-colour: #3e3b3f;      /* Text colour */

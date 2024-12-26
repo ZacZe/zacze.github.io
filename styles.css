@@ -1,15 +1,26 @@
-:root {
+.dark-mode {
   --primary-colour: #2E2C2F;   /* Dark grey for BG */
   --secondary-colour: #F7EBEC; /* Light grey for FG */
+  --text-colour: #d4c8c9;      /* Text colour */
+}
+
+.light-mode {
+  --primary-colour: #F7EBEC;   /* Light grey for BG */
+  --secondary-colour: #2E2C2F; /* Dark grey for FG */
+  --text-colour: #3e3b3f;      /* Text colour */
 }
 
 html {
   height: 100%;
   width: 100%;
 }
+
+body {
+  background-color: var(--primary-colour);
+}
   
 h1 {
-  color: var(--secondary-colour);
+  color: var(--text-colour);
   font-style:normal;
   font-size: 50px;
   font-family: "Oswald","Arial";
@@ -17,7 +28,7 @@ h1 {
   }
   
 h2 {
-  color: var(--secondary-colour);
+  color: var(--text-colour);
   font-style: normal;
   font-size: 30px;
   font-family: "Montserrat","Arial";
@@ -25,7 +36,7 @@ h2 {
 }
   
 p {
-  color: var(--secondary-colour);
+  color: var(--text-colour);
   font-style:normal;
   font-size: 20px;
   font-family: "Montserrat","Arial";
@@ -48,7 +59,7 @@ p {
 .button {
   background-color: var(--primary-colour);
   border: none;
-  color: var(--secondary-colour);
+  color: var(--text-colour);
   padding: 5px 15px;
   text-align: center;
   text-decoration: none;
@@ -63,7 +74,7 @@ p {
 
 .button:hover {
   background-color: #3B3B3E;
-  color: var(--secondary-colour);
+  color: var(--text-colour);
 }
 
 .buttonimg {

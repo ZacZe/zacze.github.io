@@ -16,7 +16,7 @@ function themeToggler() { // Toggles light or dark mode accordingly.
     }); 
 }
 
-function copyToClipboard() { // Copies value with specific ID to user"s clipboard
+function copyToClipboard() { // Copies value with specific ID to user's clipboard
     var text = document.getElementById("copyText");
 
     text.select();                    // for computers

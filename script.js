@@ -4,9 +4,11 @@ function themeToggler() { // Toggles light or dark mode accordingly.
 
     themeToggle.addEventListener("click", () => {
         if ( body.classList.toggle("dark-mode") ) { // If dark mode, 
-            body.classList.toggle("light-mode")     // turn to light mode.
+            body.classList.remove('dark-mode');     // remove dark mode
+            body.classList.add("light-mode")        // add light mode.
         } else {                                    // Else if light mode, 
-            body.classList.toggle("dark-mode")      // turn to dark mode.
+            body.classList.remove('light-mode');    // remove light mode
+            body.classList.add("dark-mode")         // add dark mode.
         }
     }); 
 }

@@ -98,7 +98,7 @@ a:active {
 }
 
 .button:hover {
-  background-color: #3B3B3E;
+  background-color: var(--hover-colour);
 }
 
 .buttonimg {

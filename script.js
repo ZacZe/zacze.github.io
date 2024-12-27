@@ -8,7 +8,7 @@ function themeToggler() { // Toggles light or dark mode accordingly.
         let savedTheme = localStorage.getItem("theme");
         body.classList.toggle("light-mode"); // Turns on/off depending if off/on.
 
-        if ( savedTheme.contains("dark") ) {
+        if ( savedTheme == "dark" ) {
             localStorage.setItem("theme", "light");
             toggleButton.innerHTML = "Dark Mode"; 
         } else {

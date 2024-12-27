@@ -1,14 +1,18 @@
+body.classList.add("light-mode");
+
 function themeToggler() { // Toggles light or dark mode accordingly. 
     const toggleButton = document.getElementById("theme-toggle");
     const body = document.body; 
-    body.classList.add("light-mode");
 
     toggleButton.addEventListener("click", () => {
+        let savedTheme = localStorage.getItem("theme");
         body.classList.toggle("light-mode"); // Turns on/off depending if off/on.
 
-        if ( body.classList.contains("light-mode") ) {
+        if ( savedTheme.contains("dark") ) {
+            localStorage.setItem("theme", "light");
             toggleButton.innerHTML = "Dark Mode"; 
         } else {
+            localStorage.setItem("theme", "dark");
             toggleButton.innerHTML = "Light Mode"; 
         }
     }); 

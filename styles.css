@@ -51,6 +51,7 @@ p {
 }
 
 .nav-bar {
+  color: var(--text-colour);
   align-items: center; 
   transform: translate(-50%, -50%);
 }

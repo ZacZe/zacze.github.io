@@ -52,6 +52,22 @@ p {
   text-decoration: none;
 }
 
+a:link {
+  color: var(--text-colour); 
+}
+
+a:visited {
+  color: var(--text-colour); 
+}
+
+a:hover {
+  color: var(--text-colour); 
+}
+
+a:active {
+  color: var(--text-colour);
+}
+
 .nav-bar {
   color: var(--text-colour);
   align-items: center; 

@@ -27,6 +27,8 @@ html {
 body {
   background-color: var(--primary-colour);
   color: var(--text-colour);
+
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
   
 h1 {

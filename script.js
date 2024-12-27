@@ -1,6 +1,3 @@
-const body = document.body; 
-body.classList.add("light-mode");
-
 function themeToggler() { // Toggles light or dark mode accordingly. 
     const toggleButton = document.getElementById("theme-toggle");
     const body = document.body; 

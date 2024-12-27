@@ -1,19 +1,19 @@
 :root {                          /* DEFAULT */
   --primary-colour: #2E2C2F;   /* Dark grey for BG */
   --secondary-colour: #F7EBEC; /* Light grey for FG */
-  --text-colour: #d4c8c9;      /* Text colour */
+  --text-colour: #e1e1e1;      /* Text colour */
 }
 
 .dark-mode {                     /* DARK MODE */
   --primary-colour: #2E2C2F;   /* Dark grey for BG */
   --secondary-colour: #F7EBEC; /* Light grey for FG */
-  --text-colour: #d4c8c9;      /* Text colour */
+  --text-colour: #e1e1e1;      /* Text colour */
 }
 
 .light-mode {                    /* LIGHT MODE */
   --primary-colour: #F7EBEC;   /* Light grey for BG */
   --secondary-colour: #2E2C2F; /* Dark grey for FG */
-  --text-colour: #3e3b3f;      /* Text colour */
+  --text-colour: #3e3e3e;      /* Text colour */
 }
 
 html {

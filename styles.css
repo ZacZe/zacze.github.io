@@ -2,18 +2,21 @@
   --primary-colour: #2E2C2F;   /* Dark grey for BG */
   --secondary-colour: #F7EBEC; /* Light grey for FG */
   --text-colour: #e1e1e1;      /* Text colour */
+  --hover-colour: #3B3B3E;     /* Hover button colour */
 }
 
 .dark-mode {                     /* DARK MODE */
   --primary-colour: #2E2C2F;   /* Dark grey for BG */
   --secondary-colour: #F7EBEC; /* Light grey for FG */
   --text-colour: #e1e1e1;      /* Text colour */
+  --hover-colour: #3B3B3E;     /* Hover button colour */
 }
 
 .light-mode {                    /* LIGHT MODE */
   --primary-colour: #F7EBEC;   /* Light grey for BG */
   --secondary-colour: #2E2C2F; /* Dark grey for FG */
   --text-colour: #3e3e3e;      /* Text colour */
+  --hover-colour: #e4dadb;     /* Hover button colour */
 }
 
 html {
@@ -23,10 +26,10 @@ html {
 
 body {
   background-color: var(--primary-colour);
+  color: var(--text-colour);
 }
   
 h1 {
-  color: var(--text-colour);
   font-style:normal;
   font-size: 50px;
   font-family: "Oswald","Arial";
@@ -34,7 +37,6 @@ h1 {
   }
   
 h2 {
-  color: var(--text-colour);
   font-style: normal;
   font-size: 30px;
   font-family: "Montserrat","Arial";
@@ -42,7 +44,6 @@ h2 {
 }
   
 p {
-  color: var(--text-colour);
   font-style:normal;
   font-size: 20px;
   font-family: "Montserrat","Arial";
@@ -65,7 +66,6 @@ p {
 .button {
   background-color: var(--primary-colour);
   border: none;
-  color: var(--text-colour);
   padding: 5px 15px;
   text-align: center;
   text-decoration: none;
@@ -80,7 +80,6 @@ p {
 
 .button:hover {
   background-color: #3B3B3E;
-  color: var(--text-colour);
 }
 
 .buttonimg {

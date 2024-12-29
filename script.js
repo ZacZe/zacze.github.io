@@ -2,14 +2,17 @@ function themeToggler() { // Toggles light or dark mode accordingly.
     const toggleButton = document.getElementById("theme-toggle");
     const body = document.body; 
 
+    const LIGHT_MODE = "light";
+    const DARK_MODE = "dark";
+
     let savedTheme = localStorage.getItem("theme");
     body.classList.toggle("light-mode"); // Turns on/off depending if off/on.
 
-    if ( savedTheme == "dark" ) {
-        localStorage.setItem("theme", "light");
+    if ( savedTheme == DARK_MODE ) {
+        localStorage.setItem("theme", LIGHT_MODE);
         toggleButton.innerHTML = "Dark Mode"; 
     } else {
-        localStorage.setItem("theme", "dark");
+        localStorage.setItem("theme", DARK_MODE);
         toggleButton.innerHTML = "Light Mode"; 
     }
 }

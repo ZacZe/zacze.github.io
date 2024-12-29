@@ -23,11 +23,11 @@ function setThemeSaved() {
     body.classList.add("no-transition");
     body.classList.remove("light-mode");
     body.classList.add("light-mode");
-    body.classList.remove("no-transition");
 
     let savedTheme = localStorage.getItem("theme");
 
     if ( savedTheme == DARK_MODE ) {
+        body.classList.toggle("light-mode");
         toggleButton.innerHTML = "Dark Mode"; 
     } else if ( savedTheme == LIGHT_MODE ) {
         toggleButton.innerHTML = "Light Mode"; 

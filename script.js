@@ -1,4 +1,4 @@
-function changeThemeSaved() {
+function themeToggler() {
     const toggleButton = document.getElementById("theme-toggle");
     const LIGHT_MODE = "light";
     const DARK_MODE = "dark";
@@ -6,42 +6,35 @@ function changeThemeSaved() {
     let savedTheme = localStorage.getItem("theme");
 
     if ( savedTheme == DARK_MODE ) {
+        body.classList.toggle("light-mode", false);
         localStorage.setItem("theme", LIGHT_MODE);
         toggleButton.innerHTML = "Dark Mode"; 
     } else if ( savedTheme == LIGHT_MODE ) {
+        body.classList.toggle("light-mode", true);
         localStorage.setItem("theme", DARK_MODE);
         toggleButton.innerHTML = "Light Mode"; 
     }
 }
 
-function setThemeSaved() {
+function setThemeOnLoad() {
     const toggleButton = document.getElementById("theme-toggle");
     const body = document.body; 
     const LIGHT_MODE = "light";
     const DARK_MODE = "dark";
 
     body.classList.add("no-transition");
-    body.classList.remove("light-mode");
-    body.classList.add("light-mode");
 
     let savedTheme = localStorage.getItem("theme");
 
     if ( savedTheme == DARK_MODE ) {
-        body.classList.toggle("light-mode");
+        body.classList.toggle("light-mode", false);
         toggleButton.innerHTML = "Dark Mode"; 
     } else if ( savedTheme == LIGHT_MODE ) {
+        body.classList.toggle("light-mode", true);
         toggleButton.innerHTML = "Light Mode"; 
     } 
 
     body.classList.remove("no-transition");
-}
-
-function themeToggler() { // Toggles light or dark mode accordingly. 
-    const body = document.body; 
-
-    body.classList.toggle("light-mode"); // Turns on/off if previously off/on. 
-
-    changeThemeSaved();
 }
 
 function copyToClipboard() { // Copies value with specific ID to user's clipboard

@@ -22,6 +22,10 @@ body {
   color: var(--text-colour);
   transition: background-color 0.5s ease, color 0.5s ease;
 }
+
+body.no-transition {
+  transition: none !important; /* Disable transitions when this class is applied */
+}
   
 h1 {
   font-style:normal;

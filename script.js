@@ -20,8 +20,10 @@ function setThemeSaved() {
     const LIGHT_MODE = "light";
     const DARK_MODE = "dark";
 
+    body.classList.add("no-transition");
     body.classList.remove("light-mode");
     body.classList.add("light-mode");
+    body.classList.remove("no-transition");
 
     let savedTheme = localStorage.getItem("theme");
 
@@ -36,7 +38,10 @@ function setThemeSaved() {
 function themeToggler() { // Toggles light or dark mode accordingly. 
     const body = document.body; 
 
+    body.classList.add("no-transition");
     body.classList.toggle("light-mode"); // Turns on/off if previously off/on. 
+    body.classList.remove("no-transition");
+
 
     changeThemeSaved();
 }

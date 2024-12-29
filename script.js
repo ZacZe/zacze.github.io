@@ -38,7 +38,7 @@ function themeToggler() { // Toggles light or dark mode accordingly.
 
     body.classList.toggle("light-mode"); // Turns on/off if previously off/on. 
 
-    changeTheme();
+    changeThemeSaved();
 }
 
 function copyToClipboard() { // Copies value with specific ID to user's clipboard

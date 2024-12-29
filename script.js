@@ -28,20 +28,18 @@ function setThemeSaved() {
     let savedTheme = localStorage.getItem("theme");
 
     if ( savedTheme == DARK_MODE ) {
-        body.classList.toggle("light-mode");
         toggleButton.innerHTML = "Dark Mode"; 
     } else if ( savedTheme == LIGHT_MODE ) {
         toggleButton.innerHTML = "Light Mode"; 
     } 
+
+    body.classList.remove("no-transition");
 }
 
 function themeToggler() { // Toggles light or dark mode accordingly. 
     const body = document.body; 
 
-    body.classList.add("no-transition");
     body.classList.toggle("light-mode"); // Turns on/off if previously off/on. 
-    body.classList.remove("no-transition");
-
 
     changeThemeSaved();
 }

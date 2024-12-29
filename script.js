@@ -15,6 +15,7 @@ function changeThemeSaved() {
 }
 
 function setThemeSaved() {
+    const toggleButton = document.getElementById("theme-toggle");
     const body = document.body; 
     const LIGHT_MODE = "light";
     const DARK_MODE = "dark";

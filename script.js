@@ -1,15 +1,3 @@
-function themeToggler() { // Toggles light or dark mode accordingly. 
-    const toggleButton = document.getElementById("theme-toggle");
-    const body = document.body; 
-
-    const LIGHT_MODE = "light";
-    const DARK_MODE = "dark";
-
-    body.classList.toggle("light-mode"); // Turns on/off depending if off/on.
-
-    changeTheme();
-}
-
 function changeTheme() {
     let savedTheme = localStorage.getItem("theme");
 
@@ -20,6 +8,18 @@ function changeTheme() {
         localStorage.setItem("theme", DARK_MODE);
         toggleButton.innerHTML = "Light Mode"; 
     }
+}
+
+function themeToggler() { // Toggles light or dark mode accordingly. 
+    const toggleButton = document.getElementById("theme-toggle");
+    const body = document.body; 
+
+    const LIGHT_MODE = "light";
+    const DARK_MODE = "dark";
+
+    body.classList.toggle("light-mode"); // Turns on/off depending if off/on.
+
+    changeTheme();
 }
 
 function copyToClipboard() { // Copies value with specific ID to user's clipboard

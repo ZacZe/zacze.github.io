@@ -18,11 +18,11 @@ function themeToggler() { // toggles the theme
         toggleButton.innerHTML = "Light Mode"; 
     } 
 
-    console.log("Theme changed!");
+    console.log("Theme changed!"); 
 }
 
 function setThemeOnLoad() { // sets theme depending on the saved theme
-    document.addEventListener("DOMContentLoaded", () => {
+    //document.addEventListener("DOMContentLoaded", () => {
         const toggleButton = document.getElementById("theme-toggle");
         const body = document.body; 
         const LIGHT_MODE = "light";
@@ -50,7 +50,7 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
         setTimeout(() => body.classList.remove("no-transition"), 100);
 
         console.log("Theme applied!");
-    });
+    //});
 }
 
 function copyToClipboard() { // Copies value with specific ID to user's clipboard

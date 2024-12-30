@@ -10,7 +10,7 @@ function themeToggler() { // toggles the theme
         body.classList.add("light-mode");
         localStorage.setItem("theme", LIGHT_MODE);
         toggleButton.innerHTML = "Dark Mode"; 
-    } else { // if saved as light mode
+    } else { // if saved as light mode or modified 
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
         toggleButton.innerHTML = "Light Mode"; 
@@ -18,26 +18,28 @@ function themeToggler() { // toggles the theme
 }
 
 function setThemeOnLoad() { // sets theme depending on the saved theme
-    const toggleButton = document.getElementById("theme-toggle");
-    const body = document.body; 
-    const LIGHT_MODE = "light";
-    const DARK_MODE = "dark";
+    document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.getElementById("theme-toggle");
+        const body = document.body; 
+        const LIGHT_MODE = "light";
+        const DARK_MODE = "dark";
 
-    body.classList.add("no-transition");
+        body.classList.add("no-transition");
 
-    let savedTheme = localStorage.getItem("theme");
+        let savedTheme = localStorage.getItem("theme");
 
-    if ( savedTheme == DARK_MODE ) {
-        body.classList.add("light-mode");
-        toggleButton.innerHTML = "Dark Mode"; 
-    } else {
-        body.classList.remove("light-mode");
-        toggleButton.innerHTML = "Light Mode"; 
-    } 
+        if ( savedTheme == DARK_MODE ) {
+            body.classList.add("light-mode");
+            toggleButton.innerHTML = "Dark Mode"; 
+        } else {
+            body.classList.remove("light-mode");
+            toggleButton.innerHTML = "Light Mode"; 
+        } 
 
-    body.classList.remove("no-transition");
+        body.classList.remove("no-transition");
 
-    setTimeout(() => body.classList.remove("no-transition"), 100);
+        setTimeout(() => body.classList.remove("no-transition"), 100);
+    });
 }
 
 function copyToClipboard() { // Copies value with specific ID to user's clipboard

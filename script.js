@@ -36,6 +36,8 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
     } 
 
     body.classList.remove("no-transition");
+
+    setTimeout(() => document.body.classList.remove("no-transition"), 5);
 }
 
 function copyToClipboard() { // Copies value with specific ID to user's clipboard

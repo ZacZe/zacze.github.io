@@ -26,9 +26,9 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
 
         body.classList.add("no-transition");
 
-        let savedTheme = localStorage.getItem("theme");
+        let savedTheme = localStorage.getItem("theme") || DARK_MODE;
 
-        if ( savedTheme == LIGHT_MODE ) {
+        if ( savedTheme === LIGHT_MODE ) {
             body.classList.add("light-mode");
             toggleButton.innerHTML = "Dark Mode"; 
         } else {

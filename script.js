@@ -12,11 +12,16 @@ function themeToggler() { // toggles the theme
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
         toggleButton.innerHTML = "Dark Mode"; 
-    } else { // if saved as light mode or modified 
+    } else if (savedTheme == DARK_MODE ) { // if saved as light mode
         body.classList.add("light-mode");
         localStorage.setItem("theme", LIGHT_MODE);
         toggleButton.innerHTML = "Light Mode"; 
-    } 
+    } else { // if nothing valid saved 
+        console.error("No theme saved. Defaulting to dark mode."); 
+        body.classList.remove("light-mode");
+        localStorage.setItem("theme", DARK_MODE);
+        toggleButton.innerHTML = "Dark Mode";
+    }
 
     console.log("Theme changed!"); 
 }

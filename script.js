@@ -11,16 +11,16 @@ function themeToggler() { // toggles the theme
     if ( savedTheme == LIGHT_MODE ) { // if saved as dark mode 
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
-        toggleButton.innerHTML = "Dark Mode"; 
+        toggleButton.textContent = "Dark Mode"; 
     } else if (savedTheme == DARK_MODE ) { // if saved as light mode
         body.classList.add("light-mode");
         localStorage.setItem("theme", LIGHT_MODE);
-        toggleButton.innerHTML = "Light Mode"; 
+        toggleButton.textContent = "Light Mode"; 
     } else { // if nothing valid saved 
         console.error("No theme saved. Defaulting to dark mode."); 
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
-        toggleButton.innerHTML = "Dark Mode";
+        toggleButton.textContent = "Dark Mode";
     }
 
     console.log("Theme changed!"); 
@@ -39,10 +39,10 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
 
     if ( savedTheme === LIGHT_MODE ) {
         body.classList.add("light-mode");
-        toggleButton.innerHTML = "Dark Mode"; 
+        toggleButton.textContent = "Dark Mode"; 
     } else if ( savedTheme === DARK_MODE ) {
         body.classList.remove("light-mode");
-        toggleButton.innerHTML = "Light Mode"; 
+        toggleButton.textContent = "Light Mode"; 
     } else {
         console.error("No theme saved. Defaulting to dark mode."); 
         body.classList.remove("light-mode");

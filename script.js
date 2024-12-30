@@ -30,6 +30,7 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
 
         console.log("Applying saved theme...");
         body.classList.add("no-transition");
+        body.style.transition = "none";
 
         let savedTheme = localStorage.getItem("theme") || DARK_MODE;
 
@@ -47,7 +48,10 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
 
         body.classList.remove("no-transition");
 
-        setTimeout(() => body.classList.remove("no-transition"), 100);
+        setTimeout(() => { 
+            body.classList.remove("no-transition"), 100
+            body.style.transition = "";
+        });
 
         console.log("Theme applied!");
     //});

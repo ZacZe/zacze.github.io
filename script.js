@@ -7,12 +7,12 @@ function themeToggler() { // toggles the theme
     let savedTheme = localStorage.getItem("theme")
 
     if ( savedTheme == LIGHT_MODE ) { // if saved as dark mode 
-        body.classList.add("light-mode");
-        localStorage.setItem("theme", LIGHT_MODE);
-        toggleButton.innerHTML = "Dark Mode"; 
-    } else { // if saved as light mode or modified 
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
+        toggleButton.innerHTML = "Dark Mode"; 
+    } else { // if saved as light mode or modified 
+        body.classList.add("light-mode");
+        localStorage.setItem("theme", LIGHT_MODE);
         toggleButton.innerHTML = "Light Mode"; 
     } 
 }

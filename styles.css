@@ -24,7 +24,7 @@ body {
 }
 
 body.no-transition {
-  transition: none !important; /* Disable transitions when this class is applied */
+  transition: none !important; /* Transition disabler */
 }
   
 h1 {

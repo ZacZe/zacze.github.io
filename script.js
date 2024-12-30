@@ -22,39 +22,35 @@ function themeToggler() { // toggles the theme
 }
 
 function setThemeOnLoad() { // sets theme depending on the saved theme
-    //document.addEventListener("DOMContentLoaded", () => {
-        const toggleButton = document.getElementById("theme-toggle");
-        const body = document.body; 
-        const LIGHT_MODE = "light";
-        const DARK_MODE = "dark";
+    const toggleButton = document.getElementById("theme-toggle");
+    const body = document.body; 
+    const LIGHT_MODE = "light";
+    const DARK_MODE = "dark";
 
-        console.log("Applying saved theme...");
-        body.classList.add("no-transition");
-        body.style.transition = "none";
+    console.log("Applying saved theme...");
+    body.style.transition = "none";
 
-        let savedTheme = localStorage.getItem("theme") || DARK_MODE;
+    let savedTheme = localStorage.getItem("theme");
 
-        if ( savedTheme === LIGHT_MODE ) {
-            body.classList.add("light-mode");
-            toggleButton.innerHTML = "Dark Mode"; 
-        } else if ( savedTheme === DARK_MODE ) {
-            body.classList.remove("light-mode");
-            toggleButton.innerHTML = "Light Mode"; 
-        } else {
-            console.error("No theme saved. Defaulting to dark mode."); 
-            body.classList.remove("light-mode");
-            localStorage.setItem("theme", DARK_MODE);
-        }
+    if ( savedTheme === LIGHT_MODE ) {
+        body.classList.add("light-mode");
+        toggleButton.innerHTML = "Dark Mode"; 
+    } else if ( savedTheme === DARK_MODE ) {
+        body.classList.remove("light-mode");
+        toggleButton.innerHTML = "Light Mode"; 
+    } else {
+        console.error("No theme saved. Defaulting to dark mode."); 
+        body.classList.remove("light-mode");
+        localStorage.setItem("theme", DARK_MODE);
+    }
 
-        body.classList.remove("no-transition");
+    body.classList.remove("no-transition");
 
-        setTimeout(() => { 
-            body.classList.remove("no-transition"), 100
-            body.style.transition = "";
-        });
+    setTimeout(() => { 
+        body.style.transition = "";
+    });
 
-        console.log("Theme applied!");
-    //});
+    console.log("Theme applied!");
 }
 
 function copyToClipboard() { // Copies value with specific ID to user's clipboard

@@ -50,10 +50,12 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
         localStorage.setItem("theme", DARK_MODE);
     }
 
+    body.offsetHeight; // Flush changes
     body.classList.remove("no-transition");
 
     setTimeout(() => { 
-        body.style.transition = "";
+        // body.style.transition = "";
+        body.classList.remove("no-transition"), 1
     });
 
     console.log("Theme applied!");

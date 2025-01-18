@@ -12,6 +12,10 @@
   --hover-colour: #e4dadb;     /* Hover button colour */
 }
 
+.no-transitions * {
+  transition: none !important; /* All transitions removed. */
+}
+
 html {
   height: 100%;
   width: 100%;

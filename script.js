@@ -33,7 +33,8 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
     const DARK_MODE = "dark";
 
     console.log("Applying saved theme...");
-    body.style.transition = "none";
+    // body.style.transition = "none";
+    body.classList.add("no-transition");
 
     let savedTheme = localStorage.getItem("theme");
 

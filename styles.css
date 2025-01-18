@@ -12,7 +12,7 @@
   --hover-colour: #e4dadb;     /* Hover button colour */
 }
 
-.no-transitions * {
+.no-transition * {
   transition: none !important; /* All transitions removed. */
 }
 

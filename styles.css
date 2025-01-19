@@ -55,20 +55,10 @@ p {
   text-decoration: none;
 }
 
-a:link {
+a {
   color: var(--text-colour); 
-}
-
-a:visited {
-  color: var(--text-colour); 
-}
-
-a:hover {
-  color: var(--text-colour); 
-}
-
-a:active {
-  color: var(--text-colour);
+  display: inline-block;
+  transform: color 0.5s ease;
 }
 
 .nav-bar {

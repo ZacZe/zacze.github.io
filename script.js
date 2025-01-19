@@ -8,14 +8,14 @@ function themeToggler() { // toggles the theme
 
     console.log("Changing theme...");
 
-    if ( savedTheme == LIGHT_MODE ) { // if saved as dark mode 
+    if ( savedTheme === LIGHT_MODE ) { // if saved as light mode 
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
-        toggleButton.textContent = "Dark Mode"; 
-    } else if (savedTheme == DARK_MODE ) { // if saved as light mode
+        toggleButton.textContent = "Light Mode"; 
+    } else if (savedTheme === DARK_MODE ) { // if saved as dark mode
         body.classList.add("light-mode");
         localStorage.setItem("theme", LIGHT_MODE);
-        toggleButton.textContent = "Light Mode"; 
+        toggleButton.textContent = "Dark Mode"; 
     } else { // if nothing valid saved 
         console.error("No theme saved. Defaulting to dark mode."); 
         body.classList.remove("light-mode");

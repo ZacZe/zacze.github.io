@@ -73,7 +73,6 @@ function copyToClipboard() { // Copies value with specific ID to user's clipboar
 function fadeout(url) { // Fades out the page and redirects to the URL
     const body = document.body; 
 
-    body.style.transition = "opacity 0.5s ease"; 
     body.style.opacity = 0;
 
     setTimeout(() => {

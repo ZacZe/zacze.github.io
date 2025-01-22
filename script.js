@@ -69,3 +69,14 @@ function copyToClipboard() { // Copies value with specific ID to user's clipboar
 
     navigator.clipboard.writeText(text.value);
 }
+
+function fadeout(url) { // Fades out the page and redirects to the URL
+    const body = document.body; 
+
+    body.style.opacity = 0;
+    window.location.href = url;
+
+    setTimeout(() => {
+        window.location.href = url, 0.5
+    });
+}

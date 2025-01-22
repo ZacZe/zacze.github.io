@@ -93,3 +93,8 @@ function fadein() {
         body.style.opacity = 1
     }, 150);
 }
+
+function fadeAndThemeSet() {
+    setThemeOnLoad(); 
+    fadein(); 
+}

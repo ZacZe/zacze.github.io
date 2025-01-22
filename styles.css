@@ -1,8 +1,11 @@
+/* ALL THEMES */
+
 :root {                          /* DEFAULT */
   --primary-colour: #2E2C2F;   /* Dark grey for BG */
   --secondary-colour: #F7EBEC; /* Light grey for FG */
   --text-colour: #e1e1e1;      /* Text colour */
   --hover-colour: #3B3B3E;     /* Hover button colour */
+  --scroll-color: #1E1C1F;     /* Scroll bar colour */
 }
 
 .light-mode {                    /* LIGHT MODE */
@@ -15,6 +18,21 @@
 .no-transition * {
   transition: none !important; /* All transitions removed. */
 }
+
+/* ALL SCROLL BARS */ 
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-color); 
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-colour); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-colour); 
+}
+
+/* ALL ELEMENTS */
 
 html {
   height: 100%;

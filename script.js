@@ -74,24 +74,24 @@ function fadeout(url) { // Fades out the page and redirects to the URL
     const body = document.body; 
 
     console.log("Fading out now... ");
-    body.style.transition = "opacity 0.15s ease";
+    body.style.transition = "opacity 0.2s ease";
     body.style.opacity = 0;
 
     setTimeout(() => {
         console.log("Redirecting to " + url); 
         window.location.href = url;
-    }, 150);
+    }, 200);
 }
 
 function fadein() {
     const body = document.body; 
 
     console.log("Fading in now... ");
-    body.style.transition = "opacity 0.15s ease";
+    body.style.transition = "opacity 0.2s ease";
 
     setTimeout(() => {
         body.style.opacity = 1
-    }, 150);
+    }, 200);
 }
 
 function fadeAndThemeSet() {

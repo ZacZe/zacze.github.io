@@ -75,9 +75,8 @@ function fadeout(url) { // Fades out the page and redirects to the URL
 
     body.style.transition = "opacity 0.5s ease"; 
     body.style.opacity = 0;
-    window.location.href = url;
 
     setTimeout(() => {
-        window.location.href = url, 1000
+        window.location.href = url, 500
     });
 }

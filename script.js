@@ -61,7 +61,7 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
     console.log("Theme applied!");
 }
 
-function copyToClipboard() { // Copies value with specific ID to user's clipboard
+function copyToClipboard(type, val) { // Copies value with specific ID to user's clipboard
     var text = document.getElementById("copyText");
 
     text.select();                    // for computers
@@ -74,24 +74,24 @@ function fadeout(url) { // Fades out the page and redirects to the URL
     const body = document.body; 
 
     console.log("Fading out now... ");
-    body.style.transition = "opacity 0.15s ease";
+    body.style.transition = "opacity 0.1s ease";
     body.style.opacity = 0;
 
     setTimeout(() => {
         console.log("Redirecting to " + url); 
         window.location.href = url;
-    }, 150);
+    }, 100);
 }
 
 function fadein() {
     const body = document.body; 
 
     console.log("Fading in now... ");
-    body.style.transition = "opacity 0.15s ease";
+    body.style.transition = "opacity 0.1s ease";
 
     setTimeout(() => {
         body.style.opacity = 1
-    }, 150);
+    }, 100);
 }
 
 function fadeAndThemeSet() {

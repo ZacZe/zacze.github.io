@@ -127,8 +127,7 @@ a {
   width: 36px;
   height: 36px; 
   transition: opacity 0.5s ease; 
-  display: flex;
-  justify-content: flex-end;
+  float: right; 
 }
 
 #theme-icon:hover {

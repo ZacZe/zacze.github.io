@@ -70,8 +70,8 @@ a {
   color: var(--text-colour);
   position: sticky;
   top: 0;
-  align-items: left; 
   background-color: var(--primary-colour); 
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .main-section {
@@ -123,8 +123,14 @@ a {
   padding: 2px 2px;
   margin: 5px 5px;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50%;
   width: 36px;
   height: 36px; 
   transition: opacity 0.5s ease; 
+  display: flex;
+  justify-content: flex-end;
+}
+
+#theme-icon:hover {
+  background-color: var(--hover-colour); 
 }

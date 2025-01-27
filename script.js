@@ -61,8 +61,8 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
     console.log("Theme applied!");
 }
 
-function copyToClipboard(type, val) { // Copies value with specific ID to user's clipboard
-    var text = document.getElementById("copyText");
+function copyToClipboard(value) { // Copies value with specific ID to user's clipboard
+    var text = value; 
 
     text.select();                    // for computers
     text.setSelectionRange(0, 99999); // for phones

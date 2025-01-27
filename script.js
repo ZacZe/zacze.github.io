@@ -61,18 +61,19 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
     console.log("Theme applied!");
 }
 
-function copyToClipboard(value) { // Copies value with specific ID to user's clipboard
-    var tmp = document.createElement("temp"); 
+function copyToClipboard(val) { // Copies value with specific ID to user's clipboard
+    var tmp1 = document.createElement("temp"); 
+    tmp1.setAttribute('id', 'toCopy'); 
+    tmp1.value = val; 
 
-    tmp.value = value; 
+    tmp2 = document.getElementById('toCopy'); 
 
+    tmp2.select();                    // for computers
+    tmp2.setSelectionRange(0, 99999); // for phones
 
-    tmp.select();                    // for computers
-    tmp.setSelectionRange(0, 99999); // for phones
+    navigator.clipboard.writeText(tmp2.value); 
 
-    navigator.clipboard.writeText(tmp.value);
-
-    tmp.remove(); 
+    tmp1.remove(); 
 }
 
 function fadeout(url) { // Fades out the page and redirects to the URL

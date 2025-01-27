@@ -71,7 +71,6 @@ a {
   position: sticky;
   top: 0;
   align-items: center; 
-  transform: translate(-50%, -50%);
 }
 
 .main-section {

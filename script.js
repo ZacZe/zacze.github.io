@@ -62,12 +62,17 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
 }
 
 function copyToClipboard(value) { // Copies value with specific ID to user's clipboard
-    var text = value; 
+    var tmp = document.createElement("temp"); 
 
-    text.select();                    // for computers
-    text.setSelectionRange(0, 99999); // for phones
+    tmp.value = value; 
 
-    navigator.clipboard.writeText(text.value);
+
+    tmp.select();                    // for computers
+    tmp.setSelectionRange(0, 99999); // for phones
+
+    navigator.clipboard.writeText(tmp.value);
+
+    tmp.remove(); 
 }
 
 function fadeout(url) { // Fades out the page and redirects to the URL

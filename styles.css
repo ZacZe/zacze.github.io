@@ -66,8 +66,10 @@ a {
   transition: color 0.5s ease;
 }
 
-.nav-bar {
+#nav-bar {
   color: var(--text-colour);
+  position: sticky;
+  top: 0;
   align-items: center; 
   transform: translate(-50%, -50%);
 }
@@ -97,6 +99,23 @@ a {
 
 .button:hover {
   background-color: var(--hover-colour);
+}
+
+.dropdownText {
+  background-color: var(--primary-colour); 
+  border: none; 
+  padding: 5px 10px; 
+  text-align: center; 
+  text-decoration: none; 
+  display: inline-block;
+  border-radius: 5px;
+  margin: 4px 2px;
+  cursor: default; 
+  transition: background-color 0.5s ease, color 0.5s ease;
+} 
+
+.dropdownText:hover {
+  background-color: var(--hover-colour); 
 }
 
 .buttonimg {

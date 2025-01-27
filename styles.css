@@ -121,7 +121,8 @@ a {
 
 .buttonimg {
   border: none;
-  padding: 2px;
+  padding: 2px 2px;
+  margin: 5px 5px;
   cursor: pointer;
   border-radius: 5px;
   width: 36px;

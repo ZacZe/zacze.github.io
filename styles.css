@@ -68,9 +68,8 @@ a {
 
 #nav-bar {
   color: var(--text-colour);
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%; 
   align-items: left; 
   background-color: var(--primary-colour); 
 }
@@ -119,7 +118,7 @@ a {
   background-color: var(--hover-colour); 
 }
 
-.buttonimg {
+#theme-icon {
   border: none;
   padding: 2px 2px;
   margin: 5px 5px;

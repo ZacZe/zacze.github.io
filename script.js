@@ -1,5 +1,6 @@
 function themeToggler() { // toggles the theme 
-    const toggleButton = document.getElementById("theme-toggle");
+    //const toggleButton = document.getElementById("theme-toggle");
+    const toggleIcon = document.getElementById("theme-icon"); 
     const body = document.body; 
     const LIGHT_MODE = "light";
     const DARK_MODE = "dark";
@@ -11,18 +12,24 @@ function themeToggler() { // toggles the theme
     if ( savedTheme === LIGHT_MODE ) { // if saved as light mode 
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
-        toggleButton.src="images/sun.png";
+        toggleIcon.opacity = 0;
+        toggleIcon.src="images/sun.png";
+        toggleIcon.opacity = 1;
         //toggleButton.textContent = "Light Mode"; 
     } else if (savedTheme === DARK_MODE ) { // if saved as dark mode
         body.classList.add("light-mode");
         localStorage.setItem("theme", LIGHT_MODE);
-        toggleButton.src="images/moon.png";
+        toggleIcon.opacity = 0;
+        toggleIcon.src="images/moon.png";
+        toggleIcon.opacity = 1; 
         //toggleButton.textContent = "Dark Mode"; 
     } else { // if nothing valid saved 
         console.error("No theme saved. Defaulting to dark mode."); 
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
-        toggleButton.src="images/moon.png";
+        toggleIcon.opacity = 0;
+        toggleIcon.src="images/sun.png";
+        toggleIcon.opacity = 1;
         //toggleButton.textContent = "Dark Mode";
     }
 
@@ -30,7 +37,8 @@ function themeToggler() { // toggles the theme
 }
 
 function setThemeOnLoad() { // sets theme depending on the saved theme
-    const toggleButton = document.getElementById("theme-toggle");
+    //const toggleButton = document.getElementById("theme-toggle");
+    const toggleIcon = document.getElementById("theme-icon"); 
     const body = document.body; 
     const LIGHT_MODE = "light";
     const DARK_MODE = "dark";
@@ -43,11 +51,15 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
 
     if ( savedTheme === LIGHT_MODE ) {
         body.classList.add("light-mode");
-        toggleButton.src="images/sun.png"; 
+        toggleIcon.opacity = 0;
+        toggleIcon.src="images/moon.png"; 
+        toggleIcon.opacity = 1; 
         //toggleButton.textContent = "Dark Mode"; 
     } else if ( savedTheme === DARK_MODE ) {
         body.classList.remove("light-mode");
-        toggleButton.src="images/moon.png";
+        toggleIcon.opacity = 0;
+        toggleIcon.src="images/sun.png";
+        toggleIcon.opacity = 1; 
         //toggleButton.textContent = "Light Mode"; 
     } else {
         console.error("No theme saved. Defaulting to dark mode."); 
@@ -59,6 +71,7 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
     body.classList.remove("no-transition");
 
     setTimeout(() => { 
+        toggleIcon.opacity = 1;
         body.style.transition = "";
         body.classList.remove("no-transition"), 1
     });

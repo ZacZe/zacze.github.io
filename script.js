@@ -49,7 +49,13 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
         //toggleButton.textContent = "Dark Mode"; 
     } else if ( savedTheme === DARK_MODE ) {
         body.classList.remove("light-mode");
+<<<<<<< HEAD
         toggleIcon.src="images/sun.png";
+=======
+        toggleIcon.opacity = 0;
+        toggleIcon.src="images/sun.png";
+        toggleIcon.opacity = 1; 
+>>>>>>> parent of cba57da (test)
         //toggleButton.textContent = "Light Mode"; 
     } else {
         console.error("No theme saved. Defaulting to dark mode."); 

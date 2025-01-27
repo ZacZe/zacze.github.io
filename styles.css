@@ -70,8 +70,8 @@ a {
   color: var(--text-colour);
   position: sticky;
   top: 0;
-  align-items: center; 
-  background-color: var(--primary-colour);
+  align-items: left; 
+  background-color: var(--primary-colour); 
 }
 
 .main-section {

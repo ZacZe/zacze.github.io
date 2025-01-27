@@ -11,16 +11,19 @@ function themeToggler() { // toggles the theme
     if ( savedTheme === LIGHT_MODE ) { // if saved as light mode 
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
-        toggleButton.textContent = "Light Mode"; 
+        toggleButton.src="images/sun.png";
+        //toggleButton.textContent = "Light Mode"; 
     } else if (savedTheme === DARK_MODE ) { // if saved as dark mode
         body.classList.add("light-mode");
         localStorage.setItem("theme", LIGHT_MODE);
-        toggleButton.textContent = "Dark Mode"; 
+        toggleButton.src="images/moon.png";
+        //toggleButton.textContent = "Dark Mode"; 
     } else { // if nothing valid saved 
         console.error("No theme saved. Defaulting to dark mode."); 
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
-        toggleButton.textContent = "Dark Mode";
+        toggleButton.src="images/moon.png";
+        //toggleButton.textContent = "Dark Mode";
     }
 
     console.log("Theme changed!"); 
@@ -40,10 +43,12 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
 
     if ( savedTheme === LIGHT_MODE ) {
         body.classList.add("light-mode");
-        toggleButton.textContent = "Dark Mode"; 
+        toggleButton.src="images/sun.png"; 
+        //toggleButton.textContent = "Dark Mode"; 
     } else if ( savedTheme === DARK_MODE ) {
         body.classList.remove("light-mode");
-        toggleButton.textContent = "Light Mode"; 
+        toggleButton.src="images/moon.png";
+        //toggleButton.textContent = "Light Mode"; 
     } else {
         console.error("No theme saved. Defaulting to dark mode."); 
         body.classList.remove("light-mode");
@@ -61,7 +66,7 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
     console.log("Theme applied!");
 }
 
-function copyToClipboard(val) { // Copies value with specific ID to user's clipboard
+function copyToClipboard(val) { // Copies value with specific ID to user's clipboard [NOT WORKNG RN]
     var tmp1 = document.createElement("temp"); 
     tmp1.setAttribute('id', 'toCopy'); 
     tmp1.value = val; 

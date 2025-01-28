@@ -68,9 +68,10 @@ a {
 
 #nav-bar {
   color: var(--text-colour);
-  position: sticky;
-  top: 0;
+  position: sticky; 
+  top: 0; 
   background-color: var(--primary-colour); 
+  margin: 0, 0, 0, 0; 
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 

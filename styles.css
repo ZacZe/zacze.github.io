@@ -119,17 +119,24 @@ a {
 }
 
 #theme-icon {
-  border: none;
-  padding: 2px 2px;
-  margin: 5px 5px;
-  cursor: pointer;
+  padding: 6px 6px;
+  width: 28px;
+  height: 28px; 
   border-radius: 50%;
-  width: 36px;
-  height: 36px; 
-  transition: opacity 0.5s ease; 
   float: right; 
+  border: none;
+  margin: 2px 2px;
+  cursor: pointer;
+  transition: color 0.5s ease, opacity 0.5s ease, background-color 0.5s ease; 
 }
 
-#theme-icon:hover {
+.buttonimg {
+  border: none;
+  margin: 2px 2px;
+  cursor: pointer;
+  transition: color 0.5s ease, opacity 0.5s ease; 
+}
+
+.buttonimg:hover {
   background-color: var(--hover-colour); 
 }

@@ -15,17 +15,20 @@ function themeToggler() { // toggles the theme
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
         toggleIcon.src="images/sun.png";
+        toggleIcon.alt="Light Mode"; 
         //toggleButton.textContent = "Light Mode"; 
     } else if (savedTheme === DARK_MODE ) { // if saved as dark mode
         body.classList.add("light-mode");
         localStorage.setItem("theme", LIGHT_MODE);
         toggleIcon.src="images/moon.png";
+        toggleIcon.alt="Dark Mode"; 
         //toggleButton.textContent = "Dark Mode"; 
     } else { // if nothing valid saved 
         console.error("No theme saved. Defaulting to dark mode."); 
         body.classList.remove("light-mode");
         localStorage.setItem("theme", DARK_MODE);
         toggleIcon.src="images/sun.png";
+        toggleIcon.alt="Light Mode"; 
         //toggleButton.textContent = "Dark Mode";
     }
 
@@ -51,17 +54,23 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
         body.classList.add("light-mode");
         toggleIcon.opacity = 0;
         toggleIcon.src="images/moon.png"; 
+        toggleIcon.alt="Dark Mode"; 
         toggleIcon.opacity = 1; 
         //toggleButton.textContent = "Dark Mode"; 
     } else if ( savedTheme === DARK_MODE ) {
         body.classList.remove("light-mode");
         toggleIcon.opacity = 0;
         toggleIcon.src="images/sun.png";
+        toggleIcon.alt="Light Mode"; 
         toggleIcon.opacity = 1; 
         //toggleButton.textContent = "Light Mode"; 
     } else {
         console.error("No theme saved. Defaulting to dark mode."); 
         body.classList.remove("light-mode");
+        toggleIcon.opacity = 0;
+        toggleIcon.src="images/sun.png";
+        toggleIcon.alt="Light Mode"; 
+        toggleIcon.opacity = 1; 
         localStorage.setItem("theme", DARK_MODE);
     }
 

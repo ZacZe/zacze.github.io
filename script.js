@@ -6,6 +6,8 @@ function themeToggler() { // toggles the theme
     const body = document.body; 
     const LIGHT_MODE = "light";
     const DARK_MODE = "dark";
+    var randomNum = Math.floor( Math.random() * 100) + 1;
+    console.log(randomNum);
 
     let savedTheme = localStorage.getItem("theme")
 
@@ -13,25 +15,36 @@ function themeToggler() { // toggles the theme
 
     toggleIcon.opacity = 0;
 
-    if ( savedTheme === LIGHT_MODE ) { // if saved as light mode 
+    if ( randomNum === 69 ) { // funny easter egg thing (1% chance or sumthn?) 
         body.classList.remove("light-mode");
-        localStorage.setItem("theme", DARK_MODE);
-        toggleIcon.src="images/sun.png";
-        toggleIcon.alt="Light Mode"; 
-        //toggleButton.textContent = "Light Mode"; 
-    } else if (savedTheme === DARK_MODE ) { // if saved as dark mode
-        body.classList.add("light-mode");
-        localStorage.setItem("theme", LIGHT_MODE);
-        toggleIcon.src="images/moon.png";
-        toggleIcon.alt="Dark Mode"; 
-        //toggleButton.textContent = "Dark Mode"; 
-    } else { // if nothing valid saved 
-        console.error("No theme saved. Defaulting to dark mode."); 
-        body.classList.remove("light-mode");
-        localStorage.setItem("theme", DARK_MODE);
-        toggleIcon.src="images/sun.png";
-        toggleIcon.alt="Light Mode"; 
-        //toggleButton.textContent = "Dark Mode";
+        body.classList.add("crazy-mode");
+        toggleIcon.src="images/linkedin-logo.png";
+        toggleIcon.alt="??? Mode"; 
+        //toggleButton.textContent = "??? Mode";
+        console.log("???"); 
+    } else {
+        body.classList.remove("crazy-mode");
+        
+        if ( savedTheme === LIGHT_MODE ) { // if saved as light mode 
+            body.classList.remove("light-mode");
+            localStorage.setItem("theme", DARK_MODE);
+            toggleIcon.src="images/sun.png";
+            toggleIcon.alt="Light Mode"; 
+            //toggleButton.textContent = "Light Mode"; 
+        } else if (savedTheme === DARK_MODE ) { // if saved as dark mode
+            body.classList.add("light-mode");
+            localStorage.setItem("theme", LIGHT_MODE);
+            toggleIcon.src="images/moon.png";
+            toggleIcon.alt="Dark Mode"; 
+            //toggleButton.textContent = "Dark Mode"; 
+        } else { // if nothing valid saved 
+            console.error("No theme saved. Defaulting to dark mode."); 
+            body.classList.remove("light-mode");
+            localStorage.setItem("theme", DARK_MODE);
+            toggleIcon.src="images/sun.png";
+            toggleIcon.alt="Light Mode"; 
+            //toggleButton.textContent = "Dark Mode";
+        }
     }
 
     toggleIcon.opacity = 1; 
@@ -91,50 +104,60 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
 // ALL PROJECT FILTER FUNCTIONS 
 
 function projectFilter() { // Changes project filter, so displays specific projects. Depends on element ID. 
-    // get value
-    // change it 
-    // find projects with specific element
-    // display only those projects 
-    // hide the others 
-    // change the text of the button
-
     const filterArr = ["all","completed","wip"]; 
-    var currentFilter = document.getElementById("filter-button"); 
-    
-    if ( currentFilter.value === filterArr[0] ) { // ALL
-        // change value and text to COMPLETED
-        currentFilter.value = filterArr[1];
-        currentFilter.textContent = "Completed";
+    const filterButton = document.getElementById("filter-button"); 
+    const projectSection = document.getElementById("project-section");
 
-        // hide all but completed
-        document.getElementById("projectWIP").style.display = "none";
-        document.getElementById("projectC").style.display = "block";
+    projectSection.style.opacity = 0; 
+    filterButton.style.opacity = 0; 
+    console.log("Changing project filter...");
 
-    } else if ( currentFilter.value === filterArr[1] ) { // COMPLETED
-        // change value and text to WIP
-        currentFilter.value = filterArr[2];
-        currentFilter.textContent = "Work In Progress";
+    setTimeout(() => { 
+        if ( filterButton.value === filterArr[0] ) { // ALL
+            // change value and text to COMPLETED
+            filterButton.value = filterArr[1];
+            filterButton.textContent = "Completed";
 
-        // hide all but WIPs
-        document.getElementById("projectC").style.display = "none";
-        document.getElementById("projectWIP").style.display = "block";
-    } else if ( currentFilter.value === filterArr[2] ) { // WIP 
-        // change value and text to ALL
-        currentFilter.value = filterArr[0];
-        currentFilter.textContent = "All";
+            // hide all but completed
+            document.getElementById("projectWIP").style.display = "none";
+            document.getElementById("projectC").style.display = "block";
 
-        // hide nothing
-        document.getElementById("projectWIP").style.display = "block";
-        document.getElementById("projectC").style.display = "block";
-    } else { // if invalid filter somehow 
-        console.error("Invalid filter value (somehow?!). Defaulting to ALL. ");
-        currentFilter.value = filterArr[0];
-        currentFilter.textContent = "All";
+            console.log("Displaying " + filterArr[1] + " projects! "); 
+        } else if ( filterButton.value === filterArr[1] ) { // COMPLETED
+            // change value and text to WIP
+            filterButton.value = filterArr[2];
+            filterButton.textContent = "Work In Progress";
 
-        // hide nothing
-        document.getElementById("projectWIP").style.display = "block";
-        document.getElementById("projectC").style.display = "block";
-    }
+            // hide all but WIPs
+            document.getElementById("projectC").style.display = "none";
+            document.getElementById("projectWIP").style.display = "block";
+
+            console.log("Displaying " + filterArr[2] + " projects! "); 
+        } else if ( filterButton.value === filterArr[2] ) { // WIP 
+            // change value and text to ALL
+            filterButton.value = filterArr[0];
+            filterButton.textContent = "All";
+
+            // hide nothing
+            document.getElementById("projectWIP").style.display = "block";
+            document.getElementById("projectC").style.display = "block";
+
+            console.log("Displaying " + filterArr[0] + " projects!"); 
+        } else { // if invalid filter somehow 
+            console.error("Invalid initial filter (somehow?!). Defaulting to " + filterArr[0] + ". ");
+            filterButton.value = filterArr[0];
+            filterButton.textContent = "All";
+
+            // hide nothing
+            document.getElementById("projectWIP").style.display = "block";
+            document.getElementById("projectC").style.display = "block";
+            
+            console.log("Displaying all projects!"); 
+        }
+
+        projectSection.style.opacity = 1; 
+        filterButton.style.opacity = 1; 
+    }, 500);
 }
 
 function copyToClipboard(val) { // Copies value with specific ID to user's clipboard [NOT WORKNG RN]

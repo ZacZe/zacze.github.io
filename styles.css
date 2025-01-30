@@ -14,6 +14,13 @@
   --hover-colour: #e4dadb;     /* Hover button colour */
 }
 
+.crazy-mode {                    /* CRAZY MODE */
+  --primary-colour: #02f326;   /* Light grey for BG */
+  --secondary-colour: #2E2C2F; /* Dark grey for FG */
+  --text-colour: #f51404;      /* Text colour */
+  --hover-colour: #fcc205;     /* Hover button colour */
+}
+
 .no-transition * {
   transition: none !important; /* All transitions removed. */
 }
@@ -34,7 +41,7 @@ body {
   
 h1 {
   font-style:normal;
-  font-size: 50px;
+  font-size: 50px; 
   font-family: "Oswald","Arial";
   text-decoration: none;
   }
@@ -82,9 +89,20 @@ a {
   display: inline-block;
   font-size: 16px;
 }
+
+#project-section, #filter-button {
+  transition: background-color 0.5s ease, color 0.5s ease, opacity 0.5s ease; 
+}
+
+#filter-button { 
+  width: 130px;
+  height: 32px;
+  text-align: left;
+}
   
 .button {
   background-color: var(--primary-colour);
+  color: var(--text-colour); 
   border: none;
   padding: 5px 15px;
   text-align: center;

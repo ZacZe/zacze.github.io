@@ -113,34 +113,53 @@ function projectFilter() { // Changes project filter, so displays specific proje
     console.log("Changing project filter...");
 
     setTimeout(() => { 
-        if ( filterButton.value === filterArr[0] ) { // ALL
+        if ( filterButton.value === filterArr[0] ) { // ALL --> COMPLETED
             // change value and text to COMPLETED
             filterButton.value = filterArr[1];
             filterButton.textContent = "Completed";
 
             // hide all but completed
-            document.getElementById("projectWIP").style.display = "none";
-            document.getElementById("projectC").style.display = "block";
+            const hideSelected = document.querySelectorAll(".projectWIP")
+            const showSelected = document.querySelectorAll(".projectC")
+
+            hideSelected.forEach((projectWIP) => {
+                projectWIP.style.display = "none"; 
+            });
+
+            showSelected.forEach((projectC) => {
+                projectC.style.display = "block";
+            }); 
 
             console.log("Displaying " + filterArr[1] + " projects! "); 
-        } else if ( filterButton.value === filterArr[1] ) { // COMPLETED
+        } else if ( filterButton.value === filterArr[1] ) { // COMPLETED --> WIP 
             // change value and text to WIP
             filterButton.value = filterArr[2];
             filterButton.textContent = "Work In Progress";
 
             // hide all but WIPs
-            document.getElementById("projectC").style.display = "none";
-            document.getElementById("projectWIP").style.display = "block";
+            const hideSelected = document.querySelectorAll(".projectC")
+            const showSelected = document.querySelectorAll(".projectWIP")
+
+            hideSelected.forEach((projectC) => {
+                projectC.style.display = "none"; 
+            });
+
+            showSelected.forEach((projectWIP) => {
+                projectWIP.style.display = "block";
+            }); 
 
             console.log("Displaying " + filterArr[2] + " projects! "); 
-        } else if ( filterButton.value === filterArr[2] ) { // WIP 
+        } else if ( filterButton.value === filterArr[2] ) { // WIP --> ALL
             // change value and text to ALL
             filterButton.value = filterArr[0];
             filterButton.textContent = "All";
 
             // hide nothing
-            document.getElementById("projectWIP").style.display = "block";
-            document.getElementById("projectC").style.display = "block";
+            const showSelected = document.querySelectorAll(".projectWIP, .projectC")
+
+            showSelected.forEach((projectAll) => {
+                projectAll.style.display = "block"; 
+            });
 
             console.log("Displaying " + filterArr[0] + " projects!"); 
         } else { // if invalid filter somehow 
@@ -149,8 +168,11 @@ function projectFilter() { // Changes project filter, so displays specific proje
             filterButton.textContent = "All";
 
             // hide nothing
-            document.getElementById("projectWIP").style.display = "block";
-            document.getElementById("projectC").style.display = "block";
+            const showSelected = document.querySelectorAll(".projectWIP, .projectC")
+
+            showSelected.forEach((projectAll) => {
+                projectAll.style.display = "block"; 
+            });
             
             console.log("Displaying all projects!"); 
         }
@@ -159,6 +181,8 @@ function projectFilter() { // Changes project filter, so displays specific proje
         filterButton.style.opacity = 1; 
     }, 500);
 }
+
+// ALL OPTIONAL FUNCTIONS 
 
 function copyToClipboard(val) { // Copies value with specific ID to user's clipboard [NOT WORKNG RN]
     var tmp1 = document.createElement("temp"); 
@@ -174,6 +198,8 @@ function copyToClipboard(val) { // Copies value with specific ID to user's clipb
 
     tmp1.remove(); 
 }
+
+// ALL FADE FUNCTIONS 
 
 function fadeout(url) { // Fades out the page and redirects to the URL
     const body = document.body; 

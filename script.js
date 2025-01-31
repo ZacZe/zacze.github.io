@@ -182,22 +182,20 @@ function projectFilter() { // Changes project filter, so displays specific proje
     }, 500);
 }
 
-function displayText() {
-    var coll = document.getElementsByClassName("projectTitle");
-    let i;
+document.addEventListener("readMoreLess", function(){
+    var text = document.getElementsByClassName("projectDetails");
 
-    for ( i = 0; i < coll.length; i++) { 
-        coll[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var projectDetails = this.nextElementSibling;
-            if (projectDetails.style.display === "block") {
-                projectDetails.style.display = "none";
+    for (let i = 0; i < text.length; i++) {
+        text[i].addEventListener("click", function() {
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+                content.style.maxHeight = null;
             } else {
-                projectDetails.style.display = "block";
-            }
+                content.style.maxHeight = content.scrollHeight + "px";
+            } 
         });
     }
-}
+});
 
 // ALL OPTIONAL FUNCTIONS 
 

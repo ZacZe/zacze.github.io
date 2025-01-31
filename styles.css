@@ -73,6 +73,12 @@ a {
   transition: color 0.5s ease;
 }
 
+footer {
+  bottom: 0;
+  width: 100%;
+  margin: 0 0 0 0;
+}
+
 #nav-bar {
   color: var(--text-colour);
   position: sticky; 
@@ -98,9 +104,10 @@ a {
   width: 130px;
   height: 32px;
   text-align: left;
+  padding: 0px 10px; 
 }
   
-.button {
+.button, .projectButton {
   background-color: var(--primary-colour);
   color: var(--text-colour); 
   border: none;
@@ -147,6 +154,12 @@ a {
   margin: 2px 2px;
   cursor: pointer;
   transition: color 0.5s ease, opacity 0.5s ease, background-color 0.5s ease; 
+}
+
+.projectButton {
+  text-align: left;
+  padding: 5px 5px;
+  width: 150px;
 }
 
 .buttonimg {

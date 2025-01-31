@@ -101,7 +101,7 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
     console.log("Theme applied!");
 }
 
-// ALL PROJECT FILTER FUNCTIONS 
+// ALL PROJECT FUNCTIONS 
 
 function projectFilter() { // Changes project filter, so displays specific projects. Depends on element ID. 
     const filterArr = ["all","completed","wip"]; 
@@ -180,6 +180,23 @@ function projectFilter() { // Changes project filter, so displays specific proje
         projectSection.style.opacity = 1; 
         filterButton.style.opacity = 1; 
     }, 500);
+}
+
+function displayText() {
+    var coll = document.getElementsByClassName("projectTitle");
+    let i;
+
+    for ( i = 0; i < coll.length; i++) { 
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var projectDetails = this.nextElementSibling;
+            if (projectDetails.style.display === "block") {
+                projectDetails.style.display = "none";
+            } else {
+                projectDetails.style.display = "block";
+            }
+        });
+    }
 }
 
 // ALL OPTIONAL FUNCTIONS 

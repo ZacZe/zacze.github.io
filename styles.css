@@ -100,6 +100,10 @@ footer {
   transition: background-color 0.5s ease, color 0.5s ease, opacity 0.5s ease; 
 }
 
+.projectDetails {
+  display: none; 
+}
+
 #filter-button { 
   width: 130px;
   height: 32px;
@@ -159,6 +163,7 @@ footer {
 .projectButton {
   text-align: left;
   padding: 5px 5px;
+  margin: 4px 2px;
   width: 150px;
 }
 

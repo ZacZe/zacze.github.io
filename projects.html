@@ -30,10 +30,14 @@
     <h1>Projects</h1>
     <h3>I indulge in a multitude of activities, ranging from web development to electronics tinkering. </h3> 
     <h3>Below are some projects that I have been working on: </h3> 
-    <button class="button" id="filter-button" value="all" onclick="projectFilter()">All</button>
+    <div display="inline">
+      <button class="button filter-button" id="filter-button" value="all" onclick="projectFilterStatus()">All</button>
+      <!-- <button class="button filter-button" id="filter-type" value="all" onclick="projectFilterType()">All</button> -->
+    </div>
+
     <div id="project-section"> 
-      <section class="projectC"> <!-- Project 1 -->
-        <button class="button projectTitle"><h2>A-Level Revision Website</h2></button>
+      <section class="projectC projectSW"> <!-- Project 1 -->
+        <button class="projectTitle button"><h2>A-Level Revision Website</h2></button>
         <div class="projectDetails"> 
           <p><strong>Date: </strong>March 2023 → May 2024</p>
           <p><strong>Status:</strong> Completed</p>
@@ -47,8 +51,8 @@
         </div>
       </section>
 
-      <section class="projectC"> <!-- Project 2 -->
-        <button class="button projectTitle"><h2>Student Robotics</h2></button>
+      <section class="projectC projectHW projectSW"> <!-- Project 2 -->
+        <button class="projectTitle button"><h2>Student Robotics</h2></button>
         <div class="projectDetails">
           <p><strong>Date: </strong>October 2023 → March 2024</p>
           <p><strong>Status:</strong> Completed - 9th Place </p>
@@ -63,8 +67,8 @@
         </div>
       </section>
 
-      <section class="projectWIP"> <!-- Project 3 -->
-        <button class="button projectTitle"><h2>Portal-Themed Bluetooth Speaker</h2></button>
+      <section class="projectWIP projectHW"> <!-- Project 3 -->
+        <button class="projectTitle button"><h2>Portal-Themed Bluetooth Speaker</h2></button>
         <div class="projectDetails">
           <p><strong>Date: </strong>TBD</p>
           <p><strong>Status:</strong> Work In Progress </p>

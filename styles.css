@@ -74,11 +74,9 @@ a {
 }
 
 footer {
-  position: relative;
+  color: var(--text-colour); 
   bottom: 0;
-  margin: 0 0 0 0;
-  margin-bottom: 20px;
-  width: 99%;
+  text-align: left;
 }
 
 #nav-bar {
@@ -106,22 +104,22 @@ footer {
 .projectTitle {
   padding: 0px 0px;
   margin: 0px 0px; 
+  font-size: 15px;
 }
 
 .projectDetails {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-
-#filter-button { 
-  width: 120px;
-  height: 32px;
-  text-align: left;
-  padding: 0px 10px; 
+  text-align: left; 
+  margin-left: 2.5%;
+  padding-left: 2.5%;
+  margin-right: 50%; 
+  border-left: thick solid var(--hover-colour); 
+  max-height: 0px;
+  overflow: hidden; 
+  display: block; 
+  transition: max-height 0.25s ease; 
 }
   
-.button, .projectTitle {
+.button, .filter-button, .projectTitle {
   background-color: var(--primary-colour);
   color: var(--text-colour); 
   border: none;
@@ -139,6 +137,13 @@ footer {
 
 .button:hover {
   background-color: var(--hover-colour);
+}
+
+.filter-button { 
+  width: 120px;
+  height: 32px;
+  text-align: left;
+  padding: 0px 10px; 
 }
 
 .dropdownText {

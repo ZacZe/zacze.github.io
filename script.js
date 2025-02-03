@@ -103,11 +103,43 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
 
 // ALL PROJECT FUNCTIONS 
 
-function projectFilter() { // Changes project filter, so displays specific projects. Depends on element ID. 
+/* 
+document.addEventListener("readMoreLess", function(){
+    var text = document.getElementsByClassName("projectDetails");
+
+    for (let i = 0; i < text.length; i++) {
+        text[i].addEventListener("click", function() {
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } 
+        });
+    }
+}); */
+
+document.addEventListener("DOMContentLoaded", function() { // Shows and hides project content depending on title clicks 
+    const titles = document.getElementsByClassName("projectTitle");
+
+    for (let i = 0; i < titles.length; i++) {
+        titles[i].addEventListener("click", function() {
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight === content.scrollHeight + "px") {
+                content.style.maxHeight = "0px"; 
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px"; 
+            } 
+        });
+    }
+});
+
+function projectFilterStatus() { // Changes project filter, so displays specific projects. Depends on element ID. 
     const filterArr = ["all","completed","wip"]; 
     const filterButton = document.getElementById("filter-button"); 
     const projectSection = document.getElementById("project-section");
 
+    filterButton.disabled = true; 
     projectSection.style.opacity = 0; 
     filterButton.style.opacity = 0; 
     console.log("Changing project filter...");
@@ -180,22 +212,91 @@ function projectFilter() { // Changes project filter, so displays specific proje
         projectSection.style.opacity = 1; 
         filterButton.style.opacity = 1; 
     }, 500);
+
+    filterButton.disabled = false; 
 }
 
-document.addEventListener("readMoreLess", function(){
-    var text = document.getElementsByClassName("projectDetails");
+/*
+function projectFilterType() { // Changes project filter, so displays specific projects. Depends on element ID. 
+    const filterArr = ["all","hardware","software"]; 
+    const filterButton = document.getElementById("filter-type"); 
+    const projectSection = document.getElementById("project-section");
 
-    for (let i = 0; i < text.length; i++) {
-        text[i].addEventListener("click", function() {
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight){
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-            } 
-        });
-    }
-});
+    projectSection.style.opacity = 0; 
+    filterButton.style.opacity = 0; 
+    console.log("Changing project filter...");
+
+    setTimeout(() => { 
+        if ( filterButton.value === filterArr[0] ) { // ALL --> HARDWARE
+            // change value and text to HARDWARE
+            filterButton.value = filterArr[1];
+            filterButton.textContent = "Hardware";
+
+            // hide all but hardware
+            const hideSelected = document.querySelectorAll(".projectSW")
+            const showSelected = document.querySelectorAll(".projectHW")
+
+            hideSelected.forEach((projectSW) => {
+                projectSW.style.display = "none"; 
+            });
+
+            showSelected.forEach((projectHW) => {
+                projectHW.style.display = "block";
+            }); 
+
+            console.log("Displaying " + filterArr[1] + " projects! "); 
+        } else if ( filterButton.value === filterArr[1] ) { // HARDWARE --> SOFTWARE 
+            // change value and text to SOFTWARE
+            filterButton.value = filterArr[2];
+            filterButton.textContent = "Software";
+
+            // hide all but software
+            const hideSelected = document.querySelectorAll(".projectHW")
+            const showSelected = document.querySelectorAll(".projectSW")
+
+            hideSelected.forEach((projectHW) => {
+                projectHW.style.display = "none"; 
+            });
+
+            showSelected.forEach((projectSW) => {
+                projectSW.style.display = "block";
+            }); 
+
+            console.log("Displaying " + filterArr[2] + " projects! "); 
+        } else if ( filterButton.value === filterArr[2] ) { // SOFTWARE --> ALL
+            // change value and text to ALL
+            filterButton.value = filterArr[0];
+            filterButton.textContent = "All";
+
+            // hide nothing
+            const showSelected = document.querySelectorAll(".projectSW, .projectHW")
+
+            showSelected.forEach((projectAll) => {
+                projectAll.style.display = "block"; 
+            });
+
+            console.log("Displaying " + filterArr[0] + " projects!"); 
+        } else { // if invalid filter somehow 
+            console.error("Invalid initial filter (somehow?!). Defaulting to " + filterArr[0] + ". ");
+
+            // change value and text to ALL
+            filterButton.value = filterArr[0];
+            filterButton.textContent = "All";
+
+            // hide nothing
+            const showSelected = document.querySelectorAll(".projectSW, .projectHW")
+
+            showSelected.forEach((projectAll) => {
+                projectAll.style.display = "block"; 
+            });
+
+            console.log("Displaying " + filterArr[0] + " projects!"); 
+        }
+
+        projectSection.style.opacity = 1; 
+        filterButton.style.opacity = 1; 
+    }, 500);
+} */
 
 // ALL OPTIONAL FUNCTIONS 
 

@@ -103,27 +103,12 @@ function setThemeOnLoad() { // sets theme depending on the saved theme
 
 // ALL PROJECT FUNCTIONS 
 
-/* 
-document.addEventListener("readMoreLess", function(){
-    var text = document.getElementsByClassName("projectDetails");
-
-    for (let i = 0; i < text.length; i++) {
-        text[i].addEventListener("click", function() {
-            var content = this.nextElementSibling;
-            if (content.style.maxHeight){
-                content.style.maxHeight = null;
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-            } 
-        });
-    }
-}); */
-
 document.addEventListener("DOMContentLoaded", function() { // Shows and hides project content depending on title clicks 
     const titles = document.getElementsByClassName("projectTitle");
 
     for (let i = 0; i < titles.length; i++) {
         titles[i].addEventListener("click", function() {
+            this.classList.toggle("active"); 
             var content = this.nextElementSibling;
             if (content.style.maxHeight === content.scrollHeight + "px") {
                 content.style.maxHeight = "0px"; 
@@ -134,12 +119,11 @@ document.addEventListener("DOMContentLoaded", function() { // Shows and hides pr
     }
 });
 
-function projectFilterStatus() { // Changes project filter, so displays specific projects. Depends on element ID. 
+function projectFilterStatus() { // Changes project filter, so displays specific projects. Depends on element class. 
     const filterArr = ["all","completed","wip"]; 
     const filterButton = document.getElementById("filter-button"); 
     const projectSection = document.getElementById("project-section");
 
-    filterButton.disabled = true; 
     projectSection.style.opacity = 0; 
     filterButton.style.opacity = 0; 
     console.log("Changing project filter...");
@@ -212,8 +196,6 @@ function projectFilterStatus() { // Changes project filter, so displays specific
         projectSection.style.opacity = 1; 
         filterButton.style.opacity = 1; 
     }, 500);
-
-    filterButton.disabled = false; 
 }
 
 /*

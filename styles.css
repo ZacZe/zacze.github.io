@@ -15,8 +15,8 @@
 }
 
 .crazy-mode {                    /* CRAZY MODE */
-  --primary-colour: #02f326;   /* Light grey for BG */
-  --secondary-colour: #2E2C2F; /* Dark grey for FG */
+  --primary-colour: #02f326;   /* Lime green for BG */
+  --secondary-colour: #aa0ef8; /* Purple for FG */
   --text-colour: #f51404;      /* Text colour */
   --hover-colour: #fcc205;     /* Hover button colour */
 }
@@ -42,7 +42,7 @@ body {
   background-color: var(--primary-colour);
   color: var(--text-colour);
   opacity: 0; 
-  transition: background-color 0.5s ease, color 0.5s ease, opacity 0.5s ease;
+  transition: background-color 0.5s ease, color 0.5s ease, opacity 0.5s ease !important; 
 }
   
 h1 {
@@ -116,7 +116,7 @@ footer {
   max-height: 0px;
   overflow: hidden; 
   display: block; 
-  transition: max-height 0.25s ease; 
+  transition: max-height 0.25s ease, border-color 0.5s ease;
 }
   
 .button, .filter-button, .projectTitle {
@@ -190,11 +190,25 @@ footer {
   width: 150px;
 }
 
-.buttonimg {
+.buttonimg, .upButton {
+  padding: 6px 6px;
+  width: 28px;
+  height: 28px; 
+  border-radius: 50%;
   border: none;
   margin: 2px 2px;
   cursor: pointer;
-  transition: color 0.5s ease, opacity 0.5s ease; 
+  transition: color 0.5s ease, opacity 0.5s ease, background-color 0.5s ease; 
+}
+
+.upButton {
+  opacity: 0; 
+  position: fixed;
+  width: 36px; 
+  height: 36px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttonimg:hover {

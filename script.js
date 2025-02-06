@@ -280,7 +280,28 @@ function projectFilterType() { // Changes project filter, so displays specific p
     }, 500);
 } */
 
-// ALL OPTIONAL FUNCTIONS 
+// ALL QUALITY OF LIFE FUNCTIONS 
+
+function showArrow() { // Shows button to user when scrolling past a certain limit. 
+    const MAX_SCROLL_LIMIT = 20; 
+
+    var content = document.getElementById("project-section"); 
+    var button = document.getElementById("scrollup-button");
+
+    if (content.scrollTop > MAX_SCROLL_LIMIT ) {
+        button.style.opacity = 1; 
+    } else {
+        button.style.opacity = 0; 
+    }
+}
+
+function scrollToTop() { // Scrolls to top of page when clicked. 
+    const body = document.body; 
+
+    body.style.transition = "scroll-behavior 0.5s ease"; 
+    body.scrollTop = 0; 
+    body.style.transition = ""; 
+}
 
 function copyToClipboard(val) { // Copies value with specific ID to user's clipboard [NOT WORKNG RN]
     var tmp1 = document.createElement("temp"); 

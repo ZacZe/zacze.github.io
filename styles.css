@@ -81,7 +81,10 @@ a {
 
 footer {
   color: var(--text-colour); 
+  position: fixed; 
   bottom: 0;
+  right: 0.5%;
+  left: 0.5%;
   text-align: left;
 }
 
@@ -206,7 +209,9 @@ footer {
   position: fixed;
   width: 36px; 
   height: 36px; 
-  display: flex;
+  bottom: 5%;
+  left: 5%; 
+  display: none;
   justify-content: center;
   align-items: center;
 }

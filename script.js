@@ -285,30 +285,33 @@ function projectFilterType() { // Changes project filter, so displays specific p
 function showArrow() { // Shows button to user when scrolling past a certain limit. 
     const MAX_SCROLL_LIMIT = 20; 
 
-    var content = document.getElementById("project-section"); 
     var button = document.getElementById("scrollup-button");
 
-    if (content.scrollTop > MAX_SCROLL_LIMIT ) {
-        button.style.opacity = 1; 
+    if (document.documentElement.scrollTop > MAX_SCROLL_LIMIT ) {
+        button.style.display = "block";
+        setTimeout(() => {
+            button.style.opacity = 1;
+        }, 250);
     } else {
         button.style.opacity = 0; 
+        setTimeout(() => {
+            button.style.display = "none";
+        }, 250); 
     }
 }
 
-function scrollToTop() { // Scrolls to top of page when clicked. 
-    const body = document.body; 
+window.addEventListener("scroll", showArrow);
 
-    body.style.transition = "scroll-behavior 0.5s ease"; 
-    body.scrollTop = 0; 
-    body.style.transition = ""; 
+function scrollToTop() { // Scrolls to top of page when clicked. 
+    window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function copyToClipboard(val) { // Copies value with specific ID to user's clipboard [NOT WORKNG RN]
+function copyToClipboard(val) { // Copies value with specific ID to user"s clipboard [NOT WORKNG RN]
     var tmp1 = document.createElement("temp"); 
-    tmp1.setAttribute('id', 'toCopy'); 
+    tmp1.setAttribute("id", "toCopy"); 
     tmp1.value = val; 
 
-    tmp2 = document.getElementById('toCopy'); 
+    tmp2 = document.getElementById("toCopy"); 
 
     tmp2.select();                    // for computers
     tmp2.setSelectionRange(0, 99999); // for phones

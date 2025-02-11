@@ -286,6 +286,11 @@ function showArrow() { // Shows button to user when scrolling past a certain lim
     const MAX_SCROLL_LIMIT = 20; 
 
     var button = document.getElementById("scrollup-button");
+    if (!button) {
+        return;
+    }
+
+    
 
     if (document.documentElement.scrollTop > MAX_SCROLL_LIMIT ) {
         button.style.display = "block";

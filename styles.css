@@ -48,11 +48,12 @@ body {
 }
   
 h1 {
-  font-style:normal;
-  font-size: 50px; 
+  font-style: normal;
+  font-size: 10vw; 
   font-family: "Oswald","Arial";
   text-decoration: none;
-  }
+  margin: 10vh 0vw; 
+}
   
 h2 {
   font-style: normal;
@@ -83,7 +84,7 @@ a {
 
 #nav-bar {
   color: var(--text-colour);
-  position: sticky; 
+  position: fixed; 
   top: 0px; 
   background-color: var(--primary-colour); 
   margin: 0px 0px; 
@@ -109,7 +110,7 @@ a {
   margin-left: 2.5%;
   padding-left: 2.5%;
   margin-right: 50%; 
-  width: 50%; 
+  width: 75%; 
   border-left: thick solid var(--hover-colour); 
   max-height: 0px;
   overflow: hidden; 
@@ -179,12 +180,15 @@ a {
   background-color: var(--hover-colour); 
 }
 
+#theme-toggle {
+  float: right; 
+}
+
 #theme-icon {
   padding: 6px 6px;
   width: 28px;
   height: 28px; 
   border-radius: 50%;
-  float: right; 
   border: none;
   margin: 2px 2px;
   cursor: pointer;

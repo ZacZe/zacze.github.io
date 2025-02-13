@@ -1,3 +1,12 @@
+/* likkle notes here 
+
+Use px for the border widths, box shadows, etc
+Use em and % for font sizes
+Use vw/vh for layout stuff maybe
+Use rem for margins and padding
+
+*/ 
+
 /* ALL THEMES */
 
 :root {                          /* DEFAULT */
@@ -49,7 +58,7 @@ body {
   
 h1 {
   font-style: normal;
-  font-size: 5rem; 
+  font-size: 5em; 
   font-family: "Oswald","Arial";
   text-decoration: none;
   margin: 2vh 0vw; 
@@ -57,26 +66,26 @@ h1 {
   
 h2 {
   font-style: normal;
-  font-size: 2.5rem;
+  font-size: 2.5em;
   font-family: "Montserrat","Arial";
   text-decoration: none;
-  margin: 6vh 0vw; 
+  margin: 1rem 0rem; 
 }
 
 h2 a {
-  font-size: 2rem;
+  font-size: 1em;
 }
 
 h3 {
   font-style: normal;
-  font-size: 1.25rem;
+  font-size: 1.25em;
   font-family: "Montserrat","Arial";
   text-decoration: none;
 }
   
 p {
   font-style: normal;
-  font-size: 1rem;
+  font-size: 1em;
   font-family: "Montserrat","Arial";
   text-decoration: none;
 }
@@ -95,12 +104,12 @@ a {
   margin: 0%; 
   padding: 0%;
   width: 100%;
-  height: 60px;
+  height: 46px;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 #about-section h2 {
-  font-size: 2rem;
+  font-size: 2em;
 }
 
 .main-section {
@@ -146,7 +155,7 @@ a {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 0.8em;
   font-family:"Oswald", "Arial";
   border-radius: 5px;
   margin: 4px 2px;
@@ -167,7 +176,7 @@ a {
 }
 
 .projectTitle h2 {
-  font-size: 2.5vw; 
+  font-size: 2.5em; 
 }
 
 .filter-button { 

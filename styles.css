@@ -63,6 +63,10 @@ h2 {
   margin: 6vh 0vw; 
 }
 
+h2 a {
+  font-size: 2rem;
+}
+
 h3 {
   font-style: normal;
   font-size: 1.25rem;
@@ -72,7 +76,7 @@ h3 {
   
 p {
   font-style: normal;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-family: "Montserrat","Arial";
   text-decoration: none;
 }

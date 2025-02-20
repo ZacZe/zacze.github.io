@@ -96,16 +96,41 @@ a {
   transition: color 0.5s ease;
 }
 
-#nav-bar {
+hr {
+  width: 100%; 
+  max-width: 100%; 
+  border: 1px solid var(--secondary-colour); 
+  margin: 0.5rem 0; 
+  box-sizing: border-box; 
+  overflow: hidden; 
+}
+
+nav {
   color: var(--text-colour);
   position: sticky; 
-  top: 0%; 
+  top: 0;  
+  height: 2.95em; 
+  padding: 0.5em 0.5em 0em 0.5em; 
   background-color: var(--primary-colour); 
-  margin: 0%; 
-  padding: 0%;
-  width: 100%;
-  height: 46px;
   transition: background-color 0.5s ease, color 0.5s ease;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+}
+
+nav #nav-left {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .button {
+  width: 3em; 
+  height: auto; 
+}
+
+nav hr {
+  width: 100%; 
+  height: 0; 
 }
 
 #about-section h2 {
@@ -204,7 +229,9 @@ a {
 }
 
 #theme-toggle {
-  float: right; 
+  width: auto;   
+  margin-left: auto; 
+  align-items: center;
 }
 
 #theme-icon {
@@ -223,6 +250,7 @@ a {
   padding: 5px 5px;
   margin: 4px 2px;
   width: 150px;
+  height: auto; 
 }
 
 .buttonimg, .upButton {

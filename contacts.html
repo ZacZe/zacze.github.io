@@ -16,15 +16,18 @@
 </head>
 
 <body onload="fadeAndThemeSet()">
-  <div id="nav-bar"> <!-- Navigation bar containing links to other pages -->
-    <a onclick="fadeout('index.html')" class="button">Home</a>
-    <a onclick="fadeout('projects.html')" class="button">Projects</a> 
-    <a onclick="fadeout('contacts.html')" class="button">Contacts</a>
+  <nav> <!-- Navigation bar containing links to other pages -->
+    <div id="nav-left">
+      <a onclick="fadeout('index.html')" class="button">Home</a>
+      <a onclick="fadeout('projects.html')" class="button">Projects</a> 
+      <a onclick="fadeout('contacts.html')" class="button">Contacts</a>
 
-    <a id="theme-toggle" onclick="themeToggler()"><img class="buttonimg" id="theme-icon" src="" alt="Light Mode"></a>
-
+      <a id="theme-toggle" onclick="themeToggler()">
+        <img class="buttonimg" id="theme-icon" src="Theme Toggle" alt="Light Mode">
+      </a>
+    </div>
     <hr>
-  </div>
+  </nav>
   
   <div class="main-section"> <!-- Contacts page -->
     <h1>Contacts</h1>
